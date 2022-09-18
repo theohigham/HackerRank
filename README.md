@@ -1,3 +1,3 @@
 # HackerRank-Java
 
-Includes solutions for Algorithms, Data Structures and Problem Solving challenges.
+My solutions to the HackerRank coding challenges, in Java. Very Fast ©️. (>*~*)>$
