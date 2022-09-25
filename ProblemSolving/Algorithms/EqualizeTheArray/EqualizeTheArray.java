@@ -19,7 +19,7 @@ public class EqualizeTheArray {
 
 	public static int findMostFrequent(List<Integer> arr) {
 
-		int output = 0;
+		int output = arr.get(1);
 		HashMap<Integer, Integer> map = new HashMap<>();
 
 		// Count element frequencies
@@ -30,7 +30,7 @@ public class EqualizeTheArray {
 
 		// Find the most frequent element
 		for (int key : map.keySet()){
-			if (map.get(key) > output) {
+			if (map.get(key) > map.get(output)) {
 				output = key;
 			}
 		}
@@ -41,6 +41,7 @@ public class EqualizeTheArray {
 
 	public static void main(String[] args) {
 		// [1,2,2,3]
+		// Output = 2
 
 		List<Integer> arr = new ArrayList<>();
 		arr.add(1);
@@ -49,6 +50,7 @@ public class EqualizeTheArray {
 		arr.add(3);
 
 		System.out.println(equalizeArray(arr));
+
 
 	}
 
