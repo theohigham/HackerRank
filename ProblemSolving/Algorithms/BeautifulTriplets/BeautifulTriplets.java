@@ -4,30 +4,15 @@ public class BeautifulTriplets {
 
 	public static int beautifulTriplets(int d, List<Integer> arr) {
     
-    	int output = 0;
-    	
-    	int j;
-    	int k;
+  		int output = 0;
 
-    	for (int i = 0; i < arr.size()-3; i++) {
+  		for (int x : arr) {
+  			if (arr.contains(x+d) && arr.contains(x+d+d)) {
+  				output++;
+  			}
+  		}
 
-    		j = i + 1;
-    		k = j + 1;
-
-    		// if (beautifulTriplet(d, arr, low, high)) {
-    		// 	output++;
-    		// }
-
-    	}
-
-    	return output;
-
-    }
-
-    public static boolean beautifulTriplet(int d, int i,int j, int k, List<Integer> arr) {
-
-
-    	return arr.get(j) - arr.get(i) == arr.get(k) - arr.get(j) && arr.get(j) - arr.get(i) == d && arr.get(k) - arr.get(j) == d;
+  		return output;
 
     }
 
@@ -42,7 +27,7 @@ public class BeautifulTriplets {
 		arr.add(4);
 		arr.add(5);
 
-		boolean output = beautifulTriplet(d,0,2,3,arr);
+		int output = beautifulTriplets(d,arr);
 		System.out.println("Output: " + output);
 		
 	}
