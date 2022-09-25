@@ -15,32 +15,28 @@ public class JumpingOnTheClouds{
         // Return no. of jumps to reach end
         
         int jumps = 0;
-        boolean justJumped = false; // Whether the player jumped at the previous cloud
+        int consecutive = 1; // The number of consecutive 0s encountered
         
         for (int i = 1; i < c.size(); i ++) {
         	int cloud = c.get(i);
 
-			if(jump(cloud, justJumped)){
-        		// jump!
-        		jumps ++;
-        	}
+			if (cloud == 0) {
+				jumps++;
+				consecutive++;
+			}
 
-        	justJumped = jump(cloud,justJumped);
+			else {
+				consecutive = 0;
+			}
+
+			if (consecutive == 3){ // Three consecutive 0s allows for a double jump
+				jumps--;
+				consecutive = 1;
+			}
 
         }
 
         return jumps;
-    }
-
-    public static boolean isCumulus(int c) {
-
-    	return c == 0 ? true : false;
-
-    }
-
-    public static boolean jump(int cloud, boolean justJumped) {
-
-    	return cloud == 0 && justJumped == false;
 
     }
 
@@ -56,6 +52,18 @@ public class JumpingOnTheClouds{
     	c.add(0);
 
     	System.out.println("output: " + jumpingOnClouds(c));
+
+    	// [0,1,0,0,0,1,0]
+    	ArrayList<Integer> c2 = new ArrayList<Integer>();
+    	c2.add(0);
+    	c2.add(1);
+    	c2.add(0);
+    	c2.add(0);
+    	c2.add(0);
+    	c2.add(1);
+    	c2.add(0);
+
+    	System.out.println("output: " + jumpingOnClouds(c2));
 
     }
 
