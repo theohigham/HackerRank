@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class ClimbingtheLeaderboard{
 
     // An arcade game player wants to climb to the top of the leaderboard and track their ranking. The game uses Dense Ranking, so its leaderboard works like this:
@@ -61,5 +63,26 @@ public class ClimbingtheLeaderboard{
         
     }
 
+    public static void main(String[] args) {
+        
+        List<Integer> ranked = new ArrayList<>();
+        ranked.add(100);
+        ranked.add(90);
+        ranked.add(90);
+        ranked.add(80);
+
+        List<Integer> player = new ArrayList<>();
+        player.add(70);
+        player.add(80);
+        player.add(105);
+
+        List<Integer> output = new ArrayList<>();
+        output = climbingLeaderboard(ranked, player);
+
+        for (Integer n : output){
+            System.out.println(n);
+        }
+
+    }
 
 }
